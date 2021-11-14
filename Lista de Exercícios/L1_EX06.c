@@ -12,21 +12,4 @@ int main() {
         }
 	}
     printf("Numero de divisores: %d\n", quantidadeDeDivisores);
-
-}
-
-#include <stdio.h>
-
-int main() {
-    int x, i = 1;
-    scanf("%d", &x);
-    while (i <= x) {
-        if (x % i == 0) {
-            printf("%d\n", i);
-        }
-        i++;
-    }
-
-    
-
 }

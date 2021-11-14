@@ -1,28 +1,20 @@
-// leitura de 2 valores e sua troca
-#include <stdio.h> // declaração de bibliotecas
+#include <stdio.h>
 
-int main () // variavel princiapal
-{
-int A, B, temp; // declaração das variaveis tipo > nome;
-scanf("%d %d", &A, &B); // entrada 
-temp = A; // troca de valores
-A = B;
-B = temp;
-printf("%d %d", A, B); // saida
-return 0;
-}
+int main () {
+    int valor1, valor2, temp;
 
+    printf("Insira 1o valor: ");
+    scanf("%d", &valor1);
+    printf("Insira 2o valor: ");
+    scanf("%d", &valor2);
 
-// leitura de 2 valores inteiros e sua troca sem variavel auxiliar
-#include <stdio.h> // declaração de bibliotecas
+    temp = valor1;
+    valor1 = valor2;
+    valor2 = temp;
 
-int main () // variavel princiapal
-{
-int A, B; 
-scanf("%d %d", &A, &B); // entrada 
-// troca de valores EX: A = 30 B = 50
-A = A + B; // EX: A = 80
-B = A - B; // EX: B = 80 - 50 -> B = 30 (trocado)
-A = A - B; // EX: A = 80 - 30 -> A = 50 (trocado)
-printf("A: %d B: %d", A, B);
+    printf("\\n\\n ----- Valores trocados -----\\n\\n");
+    printf("1o valor: %d\\n", valor1);
+    printf("2o valor: %d\\n", valor2);
+
+    return 0;
 }

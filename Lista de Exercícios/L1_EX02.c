@@ -1,9 +1,17 @@
-// area retangulo
 #include <stdio.h>
 
 int main () {
     int base, altura, area;
-    scanf("%d %d", &base, &altura);
+
+    printf("Insira o valor da base: ");
+    scanf("%d", &base);
+    printf("Insira o valor da altura: ");
+    scanf("%d", &altura);
+
     area = base * altura;
-    printf("%d", area);
+
+    printf("\\n\\n ----- Area do retangulo -----\\n\\n");
+    printf("Area = %d", area);
+
+    return 0;
 }

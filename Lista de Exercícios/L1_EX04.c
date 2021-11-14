@@ -1,39 +1,39 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-    char op;
-    int a, b;
-    float result;
-    
-    printf("Selecione um dos operadores (+, -, *, /) para realizar a operacao: ");
-    scanf("%c", &op);
-    printf("Insira o primeiro numero: ");
-    scanf("%d", &a);
-    printf("Insira o segundo numero: ");
-    scanf("%d", &b);
-    
-    if (op == '+') {
-    	result = a + b;
-    	printf("Adicao = %.0f", result);
+int main () {
+	int valor1, valor2, resultado;
+	char operador;
+
+	printf("Digite o primeiro valor: ");
+	scanf("%d", &valor1);
+	setbuf(stdin, NULL);
+
+	printf("Digite a operacao (+ - * /): ");
+	scanf("%c", &operador);
+	setbuf(stdin, NULL);
+
+	printf("Digite o segundo valor: ");
+	scanf("%d", &valor2);
+	setbuf(stdin, NULL);
+
+	if (operador == '+') {
+		resultado = valor1 + valor2;
 	}
-	
-	else if (op == '-') {
-		result = a - b;
-    	printf("Subtracao = %.0f", result);
+	else if (operador == '-') {
+			resultado = valor1 - valor2;
 	}
-	
-	else if (op == '*') {
-		result = a * b;
-    	printf("Multiplicacao = %.0f", result);
+	else if (operador == '*') {
+		resultado = valor1 * valor2;
 	}
-	
-	else if (op == '/') {
-		
-		result = a / b;
-    	printf("Divisao = %.0f", result);
+	else if (operador == '/') {
+		resultado = valor1 / valor2;
 	}
 	else {
-		printf("\n Voce inseriu as entradas erradas");
+		printf("Operador invalido!\\n");
 	}
-    return 0;
+
+	printf("O resultado da operacao e: %d", resultado);
+
+	return 0;
 }
