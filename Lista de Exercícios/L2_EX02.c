@@ -1,67 +1,41 @@
-// versao da professora
+/*
+lista 2 - exerc 2
+*/
 
 #include <stdio.h>
 
-void multiplos(int, int, int);
+void multiplos (int, int, int);
 
-void main () { // programa principal
-    multiplos(5, 20, 3);
-    multiplos(20, 5, 3);
+int main () {
+    int valor1, valor2, valor3;
+
+    printf("Insira o primeiro valor: ");
+    scanf("%d", &valor1);
+    printf("Insira o segundo valor: ");
+    scanf("%d", &valor2);
+    printf("Insira o terceiro valor: ");
+    scanf("%d", &valor3);
+
+    multiplos(valor1, valor2, valor3);
+
+    system("pause");
+    return 0;
 }
 
-void multiplos(int i1, int i2, int x) {
-    int num;
-    printf("\nOs multiplos sao: \n");
-    if (i1 < i2) { // indica ordem crescente num++
-        for (num = i1; num <= i2; num++) {
-            if (num % x == 0) { // num percorre entre n1 ate n2 / x (multiplo)
-                printf("%d\n", num);
+void multiplos (int a, int b, int x) {
+    int i;
+
+    printf("\n\nOs multiplos sao: \n\n");
+    if (a < b) {
+        for (i = a; i <= b; i++) {
+            if (i % x == 0) {
+                printf("%d\n", i);
             }
         }
-    }
-    else {
-        for (num = i1; num >= i2; num--) {
-            if (num % x == 0) {
-                printf("%d\n", num);
-            }
-        }
-    }
-}
-
-
-// versao com leitura 
-
-#include <stdio.h>
-
-void multiplos(int, int, int);
-
-void main () { // programa principal
-	int a, b, c;
-	
-	// leitura dos dados
-	printf("Digite dois inteiros para A e B: \n");
-	scanf("%d %d", &a, &b);
-	printf("Digite o numero do multiplo: \n");
-	scanf("%d", &c);
-	
-	multiplos(a, b, c);
-	
-}
-
-void multiplos(int i1, int i2, int x) {
-    int num;
-    printf("\nOs multiplos sao: \n");
-    if (i1 < i2) { // indica ordem crescente num++
-        for (num = i1; num <= i2; num++) {
-            if (num % x == 0) { // num percorre entre n1 ate n2 / x (multiplo)
-                printf("%d\n", num);
-            }
-        }
-    }
-    else {
-        for (num = i1; num >= i2; num--) {
-            if (num % x == 0) {
-                printf("%d\n", num);
+    } else { // a = 16 b = 8
+        for (i = a; i >= b; i--) {
+            if (i % x == 0) {
+                printf("%d\n", i);
             }
         }
     }
