@@ -1,6 +1,7 @@
 {
     "C_Cpp.errorSquiggles": "Disabled",
     "files.associations": {
-        "L1_EX04.C": "cpp"
+        "L1_EX04.C": "cpp",
+        "L4_EX01.C": "cpp"
     }
 }

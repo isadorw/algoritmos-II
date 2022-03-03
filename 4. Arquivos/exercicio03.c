@@ -1,8 +1,12 @@
 #include <stdio.h>
 
-#define MINP 3 // exerc pede 10
+/*
+* Preencher dados de tres funcionarios (arquivo binario).
+*/
 
-typedef struct{
+#define MINP 3
+
+typedef struct {
     int codigo;
     char nome[35];
     //char end[45];
@@ -10,31 +14,31 @@ typedef struct{
     char funcao[30];
 } TFuncionario;
 
-void main() {
+int main(){
     TFuncionario func;
-    FILE *arqf;
     int cont = 0;
 
-    arqf = fopen("funcionaros.dat", "wb");
+    FILE *arqf;
+    arqf = fopen("funcionarios.dat", "wb");
 
     if (arqf != NULL) {
-        for (cont = 0; cont <MINP; cont++) {
-            // leitura dos campos de um funcionario
+        for (cont = 0; cont < MINP; cont++) {
             printf("Codigo: ");
             scanf("%d", &func.codigo);
             printf("Nome: ");
-            scanf("%s", &func.nome); // tudo que o usuario digitar ate dar enter corresponde ao nome
+            scanf("%s", &func.nome);
             printf("Salario: ");
             scanf("%f", &func.salario);
             printf("Funcao: ");
             scanf("%s", &func.funcao);
-            
-            // deslocamento de posicao do cursor no arquivo
-			fseek(arqf, (func.codigo - 1)*sizeof(TFuncionario), SEEK_SET);
-            // gravar no arquivo binario
+
+            // <int fseek (FILE * fluxo, int deslocamento, int origem);>  
+            fseek(arqf, (func.codigo - 1) * sizeof(TFuncionario), SEEK_SET);
+
             fwrite(&func, sizeof(TFuncionario), 1, arqf);
         }
     }
 
     fclose(arqf);
+    return 0;
 }
