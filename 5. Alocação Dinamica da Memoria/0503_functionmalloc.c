@@ -2,9 +2,6 @@
 0503 PONTEIROS EM C
 > function malloc que solicita alocacao de um espaco continuo da memoria
 */
-
-
-
 #include <stdio.h>
 #include <stdlib.h> // funcao malloc
 
